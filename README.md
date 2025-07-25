@@ -52,8 +52,11 @@ The relay module used was a single Arduino v5 relay from MicroCenter
 ![SRD-05VDC-SL-C](https://github.com/user-attachments/assets/a32ba4f3-7a18-4d65-876f-cc1dd4f3ca5d)
 
 Connections between the PicoW and relay are:
+
 PicoW: VBUS <----> Relay: V
+
 PicoW: GND  <----> Relay: G
+
 PicoW: GP18 <----> Relay: S
 
 The relay can then be connected to your existing 2 wire garage door button via jumpers so that the button can still function while the relay is attached.
