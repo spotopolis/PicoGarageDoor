@@ -7,10 +7,29 @@ Simple garage door opener controlled wirelessly via webpage
 This is a simple device that allows you to add wireless functionality to garage door control.
 This project was a result of being a motorcycle rider and wanting to be able to open/close the garage to pull the bike in/out without having to either walk back into the house to open/close the garage or press the paired garage door controller button attached to the sun visor in my car. I do not have a garage door button panel outside of my garage, so I made this simple device to access the garage door from my phone while within my homes WiFi signal range.
 
+# Parts list
+
+Required:
+
+Raspberry Pi Pico W [from Microcenter](https://www.microcenter.com/product/687384/raspberry-pi-pico-2-w) (( Should also work with a Pico 2W but has not been tested ) $6.99 USD at the time of writing )
+
+Arduino v5 relay [from MicroCenter](https://www.microcenter.com/product/659887/inland-single-5v-relay-module-for-arduino) ($1.99 USD at the time of writing)
+
+Project can be completed for under $10 USD with just these two components and some spare wire.
+#
+
+Optional:
+
+To make the build a litle cleaner, use GPIO headers and some jumper wires.
+
+Jumper wires [from Microcenter](https://www.microcenter.com/product/412198/leo-sales-ltd-jumpers,-premium-6-f-f,-50-wires) ( $14.99 USD at the time of writing )
+
+GPIO right-angle header(s) [from Microcenter](https://www.microcenter.com/product/475249/schmartboard-inc-01-spacing-40-single-row-right-angle-headers-10-pack) ( $7.99 USD at the time of writing )
+
 
 
 # Function
-The PicoW host a small basic webserver via the code below:
+The PicoW hosts a small basic webserver via the code below:
 
 <img width="778" height="339" alt="image" src="https://github.com/user-attachments/assets/5a957084-19fa-4740-9784-d78a803513ec" />
 
@@ -42,14 +61,12 @@ and here:
 
 
 
-# Setup / How to use
-Before uploading the main.py to the PicoW, edit the file at lines 7, 8, and 9. Fill in your SSID, password, and gateway IP.
+# Setup
+
+Before uploading the main.py to the PicoW, edit the file at lines 7, 8, and 9. Fill in your SSID, password, and gateway IP. Thonny or NotePad++ can be used for the edits.
 
 <img width="601" height="72" alt="image" src="https://github.com/user-attachments/assets/66652f99-039e-4cf9-b18e-fb3a100a82b4" />
 
-The relay module used was a single Arduino v5 relay from MicroCenter
-
-![SRD-05VDC-SL-C](https://github.com/user-attachments/assets/a32ba4f3-7a18-4d65-876f-cc1dd4f3ca5d)
 
 Connections between the PicoW and relay are:
 
@@ -59,5 +76,16 @@ PicoW: GND  <----> Relay: G
 
 PicoW: GP18 <----> Relay: S
 
-The relay can then be connected to your existing 2 wire garage door button via jumpers so that the button can still function while the relay is attached.
+#
 
+Connect any 5v 1a USB charger to the PicoW's micro-USB port to power it on. Once the PicoW is powered on, it should get a local IP address assigned via DHCP from your firewall/router. You will want to log into your firewall/router and assign the PicoW a static IP address to make sure it doesn’t change on you and is always at the IP address you are expecting.
+
+Once you select and set a static IP address for the PicoW in your firewall/router, power cycle the PicoW so it connects to your network with the newly assigned static IP.
+
+Open a web browser on any device connected to the same WiFi network as the PicoW and browse to that static IP address. You should see the same page that I showed above under the "Function" section of this page. Tap or click the blue "Open/Close" button to verify the relay is triggering. You should hear it click on and then off while also getting an accompanying red LED to flash on the relay. If so, you are all set and ready to disconnect and attach it to your existing garage door button.
+
+#
+
+![Wiring](https://github.com/user-attachments/assets/299dbf40-fd0e-4039-9d49-eacaeabcba2b)
+
+The relay can then be connected to your existing 2 wire garage door button via jumpers so that the button can still function while the relay is attached.
