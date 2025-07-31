@@ -45,6 +45,7 @@ This function is handled here:
 
 <img width="631" height="310" alt="image" src="https://github.com/user-attachments/assets/8188db1a-6afc-4cc0-a88d-2bcd92ab11a7" />
 
+#
 
 I discovered that during a power outage or power flicker during a storm, while the WiFi network and PicoW would come back online after power is restored, the PicoW would lose connection to the network and therefor could not host the webpage to interact with. It would only come back up if I power cycled the PicoW again by hand. So to try and fix this, I have also included some basic logic to test if the connection to the gateway is active, if it is not, it will reboot the PicoW to try and reestablish a connection.
 
