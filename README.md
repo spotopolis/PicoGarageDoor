@@ -87,6 +87,9 @@ Open a web browser on any device connected to the same WiFi network as the PicoW
 
 #
 
-![Wiring](https://github.com/user-attachments/assets/299dbf40-fd0e-4039-9d49-eacaeabcba2b)
+<img width="643" height="573" alt="gdoor3" src="https://github.com/user-attachments/assets/ee17f625-d70f-4c79-a007-7e4ff5784329" />
 
 The relay can then be connected to your existing 2 wire garage door button via jumpers so that the button can still function while the relay is attached.
+All this device is doing is acting like a 2nd garage door button attached to the same door. The garage door button is a momentary switch that seperates ( or bridges ) the connection between the two wires. By running jumper wires from the existing button to the relay, you are allowing a second button/switch ( the relay ) to trigger this function as well. Only instead of a physical button press, it is done via touchscreen on a mobile device on a private LAN hosted wepbage.
+
+
